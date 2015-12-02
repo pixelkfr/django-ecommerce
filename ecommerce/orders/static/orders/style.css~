@@ -1,0 +1,22 @@
+li{
+    list-style:none;
+}
+.line{
+    display:inline-block;
+}
+.line a{
+    margin-bottom: 12px;
+    margin-left: 12px;
+}
+#footer{
+    border-top:1px lightgrey solid;
+    padding:2%;
+    margin-top:30px;
+}
+#header{
+    background-color:#383838;
+}
+#header h1{
+    color:white;
+    padding-bottom:12px;
+}

@@ -1,0 +1,38 @@
+{% extends "orders/skeleton.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <li class="line">
+        <h2>Orders</h2>
+    </li>
+    <li class="line">
+        <a class="save btn btn-success" href="{% url 'orders:order_new' %}" class="top-menu">
+            <span class="glyphicon glyphicon-plus"></span>
+        </a>
+    </li>
+
+
+    {% if latest_order_list %}
+        <ul>
+        {% for order in latest_order_list %}
+            <li>
+                <a href="{% url 'orders:detail' order.order_id %}">Order: {{ order.order_id }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No orders are available.</p>
+    {% endif %}
+
+    <!-- Search form-->
+    <h4>Search a specific order</h4>
+    <p>Ex: by place (amazone), by price, by date</p>
+    <form action="{% url 'orders:index' %}" method="GET">
+        <input type="search" name="search"/>
+        <input type="submit" value="go !"/>
+    </form>
+</div>
+
+{% endblock %}

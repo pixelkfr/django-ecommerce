@@ -1,0 +1,25 @@
+{% extends "orders/skeleton.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>Order: {{ order.order_id }}</h1>
+    <ul>
+        <li>Marketplace: {{ order.marketplace }}</li>
+        <li>Purchase date: {{ order.order_purchase_date }}</li>
+        <li>Amount: {{ order.order_amount }} {{order.order_currency}}</li>
+    </ul>
+    <a class="btn btn-danger" href="{% url 'orders:order_remove' pk=order.pk %}">
+        <span class="glyphicon glyphicon-remove"> Remove</span>
+    </a>
+
+    <a class="btn btn-warning" href="{% url 'orders:order_edit' pk=order.pk %}">
+        <span class="glyphicon glyphicon-pencil">Edit</span>
+    </a>
+
+    <a class="btn btn-default" href="{% url 'orders:index' %}">Return</a>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+<p>You searched for: <strong>{{ query }}</strong></p>
+
+{% if orders %}
+    <p>Found {{ orders|length }} order{{ orders|pluralize }}.</p>
+    <ul>
+        {% for order in orders %}
+        <li>
+            <a href="{% url 'orders:detail' order.order_id %}">Order: {{ order.order_id }}</a>
+            {% include "detail.html" with order=order.order_id %}
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No orders matched your search criteria.</p>
+{% endif %}
+
+<a href="{% url 'orders:index' %}">Return</a>

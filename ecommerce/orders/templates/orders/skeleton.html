@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>App - ecommerce</title> 
+
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'orders/style.css' %}" />
+         <!-- Bootstrap -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    </head>
+    <body>
+        <div id="container" >
+            <div id="header">
+                <div class="container">
+                    <h1>TApp - ecommerce : app orders</h1>
+                </div>
+            </div>
+            <div id="content">
+                {% block content %}
+                {% endblock %}
+            </div>
+            <div id="footer">
+                <div class="container">
+                    <p>Author: Marie-Charlotte Daureu - Django 1.8.4 - Python 2.7.6</p>
+                </div>
+            </div>
+        </div>
+
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    </body>
+</html>

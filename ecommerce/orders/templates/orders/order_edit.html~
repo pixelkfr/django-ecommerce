@@ -1,0 +1,17 @@
+{% extends "orders/skeleton.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>New Order</h1>
+    <form method="POST" class="order-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-success">Save</button>
+        <a class="btn btn-default" href="{% url 'orders:index' %}">Return</a>
+    </form>
+    <h4>After validation, you will be redirected to the details page of your order.</h4>
+
+</div>
+
+{% endblock %}
